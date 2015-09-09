@@ -59,13 +59,20 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         layoutResID = R.layout.activity_main;
         super.onCreate(savedInstanceState);
+
         ButterKnife.bind(this);
+
+        // viewPager
         pager.setOffscreenPageLimit(Constants.PAGE_COUNT);
         MyPagerAdapter adapter = new MyPagerAdapter(getSupportFragmentManager());
         pager.setAdapter(adapter);
+
+        // tabLayout
         tabs.setupWithViewPager(pager);
+
         createProfile(savedInstanceState);
     }
 
@@ -118,6 +125,7 @@ public class MainActivity extends BaseActivity {
         // Create a few sample profile
         // NOTE you have to define the loader logic too. See the CustomApplication for more details
         final IProfile profile = new ProfileDrawerItem().withName("Qi Tang").withEmail("imtangqi@gmail.com").withIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_avatar_tangqi));
+
         // Create the AccountHeader
         headerResult = new AccountHeaderBuilder()
                 .withActivity(this)

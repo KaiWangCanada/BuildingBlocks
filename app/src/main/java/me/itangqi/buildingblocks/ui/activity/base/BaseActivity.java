@@ -8,6 +8,10 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import me.itangqi.buildingblocks.R;
 
+// simple baseactivity without:
+// progressbar,
+// newrelic,
+
 public class BaseActivity extends AppCompatActivity {
 
     @Bind(R.id.toolbar) Toolbar toolbar;
